@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const resultado = document.querySelector('.result')
 
+    const movimentosDisplay = document.createElement('div');
+    const cronometroDisplay = document.createElement('div');
+    document.body.insertBefore(movimentosDisplay, gameBoard);
+    document.body.insertBefore(cronometroDisplay, gameBoard);
+
     const symbols = ['🍎', '🍌', '🍒', '🍇', '🍉', '🍓', '🍍', '🥭'];
     const cards = [...symbols, ...symbols]; //duplicar os simbolos para criar pares
 
@@ -10,6 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let revealedCards = [];
     let matchedPairs = 0;
+    let movimentos = 0;
+    let cronometro;
+    let tempo = 0;
+
+    // Função para atualizar o cronômetro
+    function atualizarCronometro() {
+        tempo++;
+        const minutos = Math.floor(tempo / 60);
+        const segundos = tempo % 60;
+        cronometroDisplay.textContent = `Tempo: ${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+    }
+    //iniciar cronometro
+    function iniciarCronometro() {
+        if (!cronometro) {
+            cronometro = setInterval(atualizarCronometro, 1000);
+        }
+    }
+
+    // Parar cronômetro
+    function pararCronometro() {
+        clearInterval(cronometro);
+    }
 
     // Criar as cartas no tabuleiro
     cards.forEach(symbol => {
@@ -19,8 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         gameBoard.appendChild(card);
 
         card.addEventListener('click', () => {
+            iniciarCronometro(); // chama logo após o primeiro clique
+
             // revelar a carta
             if(revealedCards.length < 2 && !card.classList.contains('revealed')) {
+                movimentos++;
+                movimentosDisplay.textContent = `Movimentos: ${movimentos}`;
+
                 card.classList.remove('hidden');
                 card.classList.add('revealed');
                 card.textContent = symbol;
@@ -61,8 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // verificar se todas as cartas foram combinadas
         if(matchedPairs === symbols.length) {
             setTimeout(() => {
-            alert('Conseguiu!')
-            resultado.innerHTML = 'Parabéns! você encontrou todos os pares! (: '
+                pararCronometro();
+                alert('Conseguiu!')
+                resultado.innerHTML = 'Parabéns! você encontrou todos os pares! (: '
             }, 500);
         }
     }
