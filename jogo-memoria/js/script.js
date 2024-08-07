@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const resultado = document.querySelector('.result')
+    
 
     const movimentosDisplay = document.createElement('div');
+    movimentosDisplay.classList.add('movimentos');
     const cronometroDisplay = document.createElement('div');
+    cronometroDisplay.classList.add('cronometro');
     document.body.insertBefore(movimentosDisplay, gameBoard);
     document.body.insertBefore(cronometroDisplay, gameBoard);
 
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let revealedCards = [];
     let matchedPairs = 0;
-    let movimentos = 0;
+    let movimentos = 1;
     let cronometro;
     let tempo = 0;
 
@@ -50,8 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // revelar a carta
             if(revealedCards.length < 2 && !card.classList.contains('revealed')) {
-                movimentos++;
-                movimentosDisplay.textContent = `Movimentos: ${movimentos}`;
+                
 
                 card.classList.remove('hidden');
                 card.classList.add('revealed');
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 //verifica se ha duas cartas reveladas
                 if (revealedCards.length === 2) {
+                    movimentosDisplay.textContent = `Movimentos: ${movimentos++}`;
                     checkForMatch();
                 }
             }

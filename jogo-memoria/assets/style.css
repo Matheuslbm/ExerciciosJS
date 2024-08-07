@@ -1,11 +1,29 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f0f0f0;
+}
+
+.movimentos {
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 23px;
+    color: rgb(37, 122, 122);
+}
+.cronometro {
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: rgb(37, 122, 122);
 }
 
 .game-board {
@@ -41,7 +59,8 @@ body {
 }
 
 .result {
-    color: red;
-    font-size: large;
+    color: rgb(17, 68, 62);
+    font-size: 25px;
     margin-left: 30px;
+    margin-top: 15px;
 }
