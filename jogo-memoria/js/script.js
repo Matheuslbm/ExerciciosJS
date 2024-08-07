@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tempo++;
         const minutos = Math.floor(tempo / 60);
         const segundos = tempo % 60;
-        cronometroDisplay.textContent = `Tempo: ${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+
+        // se minutos for 0, exiba apenas segundos, senao exiba minutos e segundos
+        cronometroDisplay.textContent = minutos > 0 ? `Tempo: ${minutos}:${segundos < 10 ? '0' : ''}${segundos}` : `Tempo: ${segundos}`;
     }
     //iniciar cronometro
     function iniciarCronometro() {
