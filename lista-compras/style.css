@@ -6,6 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 
 }
 
