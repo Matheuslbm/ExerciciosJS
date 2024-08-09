@@ -1,0 +1,1 @@
+// Responsavel por representar uma despesa com propriedades como nome, valor e categoria
