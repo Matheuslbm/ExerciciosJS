@@ -8,28 +8,35 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <form>
-        <h1>Organizador de despesas</h1>
-        <p>Nome</p>
-        <input type="text" placeholder="Despesa" class="despesa">
-        <p>Valor</p>
-        <input type="number" placeholder="Valor" class="valor-despesa">
-        <p>Categoria</p>
-        <input type="text" placeholder="Categoria" class="Categoria">
-        <br>
-        <input type="button" value="Adicionar despesa">
-    </form>
+   <div class="container">
+       <h1>Organizador de despesas</h1>
+        <form id="expense-form">
+        
+            <input type="text" placeholder="Nome da Despesa" id="expense-name" required>
+            
+            <input type="number" placeholder="Valor" id="expense-amount" required>
 
-    <div class="container">
-        despesas registradas
+            <select id="expense-category" required>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="entretenimento">Entretenimento</option>
+                <option value="estudos">Estudos</option>
+                <option value="outros">Outros</option>
+            </select>
+        
+            <input type="button" value="Adicionar despesa">
+        </form>
 
-        <div class="result">
-            Total geral: 
-            <br>
-            Total por categoria:
+        <ul id="expense-list"></ul>
+
+        <div class="sumary">
+            <p>Total geral: <span id="total-amount">R$ 0,00</span></p>
+            <p>Por categoria: </p>
+            <ul id="category-totals"></ul>
         </div>
-    </div>
+   </div>
 
-    <script type="module" src="./assets/js/script.js"></script>
+
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
