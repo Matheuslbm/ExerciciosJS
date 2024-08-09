@@ -26,14 +26,14 @@ export class UI {
             deleteBtn.addEventListener('click', () => {
                 this.expenseManager.removeExpense(expense.id);
                 this.renderExpenses();
-                this.updateSumary()
+                this.updateSummary()
             });
             li.appendChild(deleteBtn);
             this.expenseListElement.appendChild(li);
         })
     }
 
-    updateSumary() {
+    updateSummary() {
         const totalAmount = this.expenseManager.getTotalAmount();
         this.totalAmountElement.textContent = `R$ ${totalAmount.toFixed(2)}`;
 
@@ -42,7 +42,7 @@ export class UI {
 
         for (const category in totalsByCategory) {
             const li = document.createElement('li');
-            li.textContent = `${category}: R${totalsByCategory[category].toFixed(2)}`;
+            li.textContent = `${category}: R$ ${totalsByCategory[category].toFixed(2)}`;
             this.categoryTotalsElement.appendChild(li);
         }
     }
@@ -56,8 +56,8 @@ export class UI {
 
         this.expenseManager.addExpense(name, amount, category);
         this.renderExpenses();
-        this.updateSumary();
+        this.updateSummary();
 
-        e.target.reset();
+        document.getElementById('expense-form').reset();
     }
 }

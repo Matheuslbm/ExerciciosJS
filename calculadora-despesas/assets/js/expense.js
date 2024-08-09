@@ -2,7 +2,7 @@
 // despesa individual
 
 export class Expense {
-    constructor(name, a,ount, category){
+    constructor(name, amount, category){
         this.name = name,
         this.amount = parseFloat(amount);
         this.category = category;

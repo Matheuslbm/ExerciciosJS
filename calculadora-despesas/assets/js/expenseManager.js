@@ -33,12 +33,16 @@ export class ExpenseManager {
         const totals = {};
         this.expenses.forEach(expense => {
             if(totals[expense.category]) {
-                total[expense.category] += expense.amount;
+                totals[expense.category] += expense.amount;
             } else {
                 totals[expense.category] = expense.amount;
             }
         });
         return totals;
+    }
+
+    getTotalAmount(){
+        return this.expenses.reduce((total, expense) => total + expense.amount, 0);
     }
 
     getExpenses() {

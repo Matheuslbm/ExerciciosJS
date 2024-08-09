@@ -7,4 +7,4 @@ const expenseManager = new ExpenseManager();
 const ui = new UI(expenseManager);
 
 ui.renderExpenses();
-ui.updateSumary();
+ui.updateSummary();
