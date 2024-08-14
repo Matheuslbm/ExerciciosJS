@@ -1,7 +1,7 @@
 // A classe note representa uma nota
 
 export class Note {
-    constructor(tile, content, category) {
+    constructor(title, content, category) {
         this.title = title;
         this.content = content;
         this.category = category;

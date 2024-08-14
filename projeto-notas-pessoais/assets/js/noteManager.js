@@ -14,7 +14,7 @@ export class NoteManager {
     }
 
     removeNote(id) {
-        this.notes = this.notes.filter(notes => note.id !== id);
+        this.notes = this.notes.filter(note => note.id !== id);
         this.saveNotes();
     }
 

@@ -26,7 +26,7 @@ export class UI {
         notes.forEach(note => {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${note.title}</strong> - 
-            ${note.content} <span class="note-category> (${note.category})</span>"`;
+            ${note.content} <span class="note-category"> (${note.category})</span>`;
 
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Excluir';
