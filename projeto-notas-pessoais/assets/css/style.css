@@ -1,0 +1,57 @@
+body {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight:normal;
+    font-style: normal;
+
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+}
+
+.container {
+    width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], textarea, select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

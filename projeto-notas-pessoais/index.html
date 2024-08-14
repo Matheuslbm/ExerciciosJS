@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nunito:wght@200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Notas</h1>
+
+        <!--Formulario para adicionar/editar notas-->
+        <form id="note-form">
+            <input type="text" id="note-title" placeholder="Título da nota" required>
+            <textarea id="note-content" placeholder="Conteúdo da nota" required></textarea>
+            <select id="note-category" required>
+                <option value="pessoal">Pessoal</option>
+                <option value="trabalho">Trabalho</option>
+                <option value="estudos">Estudos</option>
+            </select>
+
+            <input type="submit" value="Salvar Nota">
+        </form>
+
+        <!--Campo de busca-->
+        <input type="text" id="search-notes" placeholder="Buscar notas">
+
+        <!--Area onde as nottas serao exibidas-->
+        <ul id="note-list"></ul>
+    </div>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
