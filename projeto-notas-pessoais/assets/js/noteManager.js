@@ -1,0 +1,1 @@
+// Gerencia as notas, adiciona, remove, busca e organiza as notas
