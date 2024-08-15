@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMB E GET</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding:wght@400;700&family=Nunito:wght@200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de TMB e GET</h1>
+        <form id="tmb-get-form">
+            <input type="number" id="age" placeholder="Idade" required>
+            <input type="number" id="weight" placeholder="Peso (kg)" required>
+            <input type="number" id="height" placeholder="Altura (cm)" required>
+            <select id="gender" required>
+                <option value="">Gênero</option>
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+            </select>
+            <select id="activity-level" required>
+                <option value="">Selecione o nível de atividade</option>
+                <option value="1.2">Sedentário</option>
+                <option value="1.375">Levemente ativo</option>
+                <option value="1.55">Moderadamente ativo</option>
+                <option value="1.725">Altamente ativo</option>
+                <option value="1.9">Extremamente ativo</option>
+            </select>
+            <input type="submit" value="Calcular">
+        </form>
+        <div id="results"></div>
+    </div>
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
