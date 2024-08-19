@@ -14,15 +14,19 @@
 <body>
     <div class="container">
         <h1>Calculadora de TMB e GET</h1>
+
         <form id="tmb-get-form">
+
             <input type="number" id="age" placeholder="Idade" required>
             <input type="number" id="weight" placeholder="Peso (kg)" required>
             <input type="number" id="height" placeholder="Altura (cm)" required>
+
             <select id="gender" required>
                 <option value="">Gênero</option>
                 <option value="male">Masculino</option>
                 <option value="female">Feminino</option>
             </select>
+
             <select id="activity-level" required>
                 <option value="">Selecione o nível de atividade</option>
                 <option value="1.2">Sedentário</option>
@@ -31,9 +35,23 @@
                 <option value="1.725">Altamente ativo</option>
                 <option value="1.9">Extremamente ativo</option>
             </select>
+
+            <select id="goal" required>
+                <option value="manter">Manter Peso</option>
+                <option value="emagrecer">Emagrecer</option>
+                <option value="ganhar">Ganhar Massa</option>
+            </select>
+
+            <select id="weight-adjustment">
+                <option value="0.25">250g por semana</option>
+                <option value="0.5">500g por semana</option>
+                <option value="0.7">700g por semana</option>
+            </select>
+
             <input type="submit" value="Calcular">
         </form>
         <div id="results"></div>
+        <p id="calorie-suggestion"></p>
     </div>
     <script type="module" src="./assets/js/main.js"></script>
 </body>
